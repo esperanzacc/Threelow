@@ -1,5 +1,5 @@
 //
-//  Dice.h
+//  InputCollector.h
 //  Threelow
 //
 //  Created by Esperanza on 2022-05-17.
@@ -9,12 +9,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Dice : NSObject
+@interface InputCollector : NSObject
 
-@property (nonatomic) NSString *value;
+- (NSString *)inputForPrompt: (NSString *)promptString;
 
-- (instancetype)init;
-- (NSString *) randomizeValue;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -13,13 +13,15 @@
 {
   self = [super init];
   if (self) {
-    _value = 0;
+    _value = @"";
   }
   return self;
 }
 
-- (void) randomizeValue {
-  NSInteger randomVal = arc4random_uniform(5) + 1;
-  _value = randomVal;
+- (NSString *) randomizeValue {
+  NSArray *array = [[NSArray alloc]initWithObjects:@"⚀", @"⚁", @"⚂", @"⚃", @"⚄", @"⚅", nil];
+  uint32_t rnd = arc4random_uniform(5);
+  _value = [array objectAtIndex:rnd];
+  return _value;
 }
 @end
