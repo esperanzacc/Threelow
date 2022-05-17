@@ -24,4 +24,9 @@
   _value = [array objectAtIndex:rnd];
   return _value;
 }
+
+- (void) resetting {
+  _value = @"";
+}
+
 @end

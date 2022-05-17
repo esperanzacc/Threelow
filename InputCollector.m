@@ -9,6 +9,15 @@
 
 @implementation InputCollector
 
+- (instancetype)init
+{
+  self = [super init];
+  if (self) {
+    _history = [NSMutableArray new];
+  }
+  return self;
+}
+
 - (NSString *)inputForPrompt: (NSString *)promptString {
   char inputChars[255];
   NSLog(@"%@", promptString);
