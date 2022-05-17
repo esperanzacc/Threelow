@@ -26,11 +26,16 @@ int main(int argc, const char * argv[]) {
       [[inputCollector history]addObject:input];
         if ([[inputCollector history]count] == 6 ) {
           NSLog(@"You can not roll again.");
-        } else {
-          [[gameController array]removeAllObjects];
+        } else if ([[inputCollector history]count] > 1) {
+          if (!([[gameController held]count] == 1)) {
+            NSLog(@"You have to select at least one die each turn.");
+            [[gameController array]removeAllObjects];
+          }
+        }else {
           [gameController playDice];
           [gameController displayVal:[[inputCollector history]count]];
         }
+          
       } else if ([input isEqualToString:@"hold"]) {
         NSString *hold = [inputCollector inputForPrompt:@"Enter the number of the die:"];
         [gameController holdDie:[hold integerValue] andHold:YES];

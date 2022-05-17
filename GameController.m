@@ -100,7 +100,7 @@
       } else if ([[_array objectAtIndex:[index integerValue]] isEqualToString:@"[⚁]"]) {
         sum += 2;
       } else if ([[_array objectAtIndex:[index integerValue]] isEqualToString:@"[⚂]"]) {
-        sum += 3;
+        sum += 0;
       } else if ([[_array objectAtIndex:[index integerValue]] isEqualToString:@"[⚃]"]) {
         sum += 4;
       } else if ([[_array objectAtIndex:[index integerValue]] isEqualToString:@"[⚁]"]) {
